@@ -38,8 +38,6 @@ if ingredients_list:
     ingredients_string = ''
 
     for each_fruit in ingredients_list:
-        if each_fruit is None:
-            continue  # Skip this item if it's None
         search_on = pd_df.loc[pd_df['FRUIT_NAME'] == each_fruit, 'SEARCH_ON'].iloc[0]
         if pd.isna(search_on):
             st.warning(f"No search value for {each_fruit}. Skipping.")
